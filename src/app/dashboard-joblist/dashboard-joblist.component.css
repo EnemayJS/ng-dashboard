@@ -1,0 +1,7 @@
+span .badge {
+    margin: 5px;
+}
+
+.list-group-item:hover {
+    cursor: pointer;
+}
