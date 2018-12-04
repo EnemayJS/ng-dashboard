@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OverallData } from '../interfaces/overalldata';
+import { DashboardService } from 'src/app/dashboard.service';
 
 @Component({
   selector: 'app-dashboard-jumbotron',
@@ -8,11 +9,13 @@ import { OverallData } from '../interfaces/overalldata';
 })
 export class DashboardJumbotronComponent implements OnInit {
   overalData: OverallData;
-  constructor() {
-    this.overalData = {todo: 30, inprocess: 25, done: 40};
+  constructor(private service: DashboardService) {
   }
 
   ngOnInit() {
+    this.getData();
   }
-
+  getData(): void {
+    this.service.getOverallData().subscribe(data => this.overalData = data);
+  }
 }
