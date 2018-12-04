@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard-joblist',
-  templateUrl: './dashboard-joblist.component.html',
-  styleUrls: ['./dashboard-joblist.component.css']
+  templateUrl: './joblist.component.html',
+  styleUrls: ['./joblist.component.css']
 })
 export class DashboardJoblistComponent implements OnInit {
 

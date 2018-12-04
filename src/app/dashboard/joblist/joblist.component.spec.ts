@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardJumbotronComponent } from './dashboard-jumbotron.component';
+import { DashboardJoblistComponent } from './joblist.component';
 
-describe('DashboardJumbotronComponent', () => {
-  let component: DashboardJumbotronComponent;
-  let fixture: ComponentFixture<DashboardJumbotronComponent>;
+describe('DashboardJoblistComponent', () => {
+  let component: DashboardJoblistComponent;
+  let fixture: ComponentFixture<DashboardJoblistComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardJumbotronComponent ]
+      declarations: [ DashboardJoblistComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardJumbotronComponent);
+    fixture = TestBed.createComponent(DashboardJoblistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
