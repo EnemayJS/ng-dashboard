@@ -19,4 +19,8 @@ export class EmployeesService {
   getEmployeeJobsList(): Observable<EmployeeJobs[]> {
     return of(employees);
   }
+
+  addEmployee(employee: EmployeeJobs) {
+
+  }
 }

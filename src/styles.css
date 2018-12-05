@@ -8,8 +8,10 @@
 }
 
 .metric {
-    /* border: 1px solid gray;
-    border-radius: 5px; */
     text-align: center;
     padding: 50px;
+}
+
+.icon {
+    margin: 5px;
 }

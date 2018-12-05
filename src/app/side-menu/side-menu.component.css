@@ -7,10 +7,6 @@
    margin-bottom: 25px;
 }
 
-.icon {
-    margin: 5px;
-}
-
 .navibar .nav-item:hover {
     background-color: #7BC6F2;
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);

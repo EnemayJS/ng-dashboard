@@ -1,0 +1,32 @@
+<h4>New Employee</h4>
+<div class="row">
+  <div class="col">
+    <form [formGroup]="employee" (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Full Name:</label>
+        <div class="col-10">
+          <input type="text" formControlName="fullName" class="form-control shadow-sm" placeholder="Type full name">
+        </div>      
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">To do:</label>
+        <div class="col-10">
+          <input type="number" formControlName="todo" class="form-control shadow-sm">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">In process:</label>
+        <div class="col-10">
+            <input type="number" formControlName="inProcess" class="form-control shadow-sm">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Done:</label>
+        <div class="col-10">
+            <input type="number" formControlName="done" class="form-control shadow-sm">
+        </div>
+      </div>
+      <button class="btn shadow" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
