@@ -4,6 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path: '',
    loadChildren: './dashboard/dashboard.module#DashboardModule'
+  },
+  {
+    path: 'employees',
+    loadChildren: './employees/employees.module#EmployeeModule'
   }
 ];
 

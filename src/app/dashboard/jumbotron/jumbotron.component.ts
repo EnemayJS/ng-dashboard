@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OverallData } from '../interfaces/overalldata';
-import { DashboardService } from 'src/app/dashboard.service';
+import { DashboardService } from 'src/app/dashboard/dashboard.service';
 
 @Component({
   selector: 'app-dashboard-jumbotron',

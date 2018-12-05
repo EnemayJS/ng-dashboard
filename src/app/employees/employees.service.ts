@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { OverallData } from './dashboard/interfaces/overalldata';
-import { EmployeeJobs } from './dashboard/interfaces/employeeJobs';
+import { EmployeeJobs } from './interfaces/employeeJobs';
 
-const overallData = {todo: 31, inprocess: 25, done: 40};
 const employees = [
   {id: 1, fullname: 'John Doe', todo: 11, inprocess: 10, done: 15},
   {id: 2, fullname: 'Kitty Black', todo: 10, inprocess: 13, done: 5},
@@ -14,12 +12,9 @@ const employees = [
 @Injectable({
   providedIn: 'root'
 })
-export class DashboardService {
-  constructor() { }
+export class EmployeesService {
 
-  getOverallData(): Observable<OverallData> {
-    return of(overallData);
-  }
+  constructor() { }
 
   getEmployeeJobsList(): Observable<EmployeeJobs[]> {
     return of(employees);
