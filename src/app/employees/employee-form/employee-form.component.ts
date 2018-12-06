@@ -25,6 +25,7 @@ export class EmployeeFormComponent implements OnInit {
   constructor(
     private service: EmployeesService,
     private route: ActivatedRoute,
+    private location: Location
     ) { }
 
   ngOnInit() {
@@ -56,5 +57,9 @@ export class EmployeeFormComponent implements OnInit {
       done: new FormControl(employee ? employee.done : ''),
       id: new FormControl(employee ? employee.id : '')
     });
+  }
+
+  back(): void {
+    this.location.back();
   }
 }
