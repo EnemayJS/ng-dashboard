@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardJumbotronComponent } from './jumbotron.component';
+import { DashboardJumbotronTodoComponent } from './todo/todo.component';
+import { DashboardJumbotronInprocessComponent } from './inprocess/inprocess.component';
+import { DashboardJumbotronDoneComponent } from './done/done.component';
 
 describe('DashboardJumbotronComponent', () => {
   let component: DashboardJumbotronComponent;
@@ -8,7 +11,11 @@ describe('DashboardJumbotronComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardJumbotronComponent ]
+      declarations: [ DashboardJumbotronComponent,
+        DashboardJumbotronTodoComponent,
+        DashboardJumbotronInprocessComponent,
+        DashboardJumbotronDoneComponent
+       ]
     })
     .compileComponents();
   }));

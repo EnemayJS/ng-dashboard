@@ -1,12 +1,28 @@
 import { TestBed, async } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        SideMenuComponent,
       ],
+      imports: [
+        BrowserModule,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule.forRoot(
+          InMemoryDataService, {dataEncapsulation: false}
+        ),
+        AppRoutingModule,
+      ],
+      providers: []
     }).compileComponents();
   }));
 
@@ -20,12 +36,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('ng-dashboard');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to ng-dashboard!');
   });
 });
