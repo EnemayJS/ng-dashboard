@@ -1,26 +1,46 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { EmployeeJobs } from './interfaces/employeeJobs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
 
-const employees = [
-  {id: 1, fullname: 'John Doe', todo: 11, inprocess: 10, done: 15},
-  {id: 2, fullname: 'Kitty Black', todo: 10, inprocess: 13, done: 5},
-  {id: 3, fullname: 'Mike Brown', todo: 2, inprocess: 8, done: 1},
-  {id: 4, fullname: 'Anthony Star', todo: 14, inprocess: 1, done: 8},
-];
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeesService {
-
-  constructor() { }
+  private employeesUrl = 'api/employees';
+  constructor(private http: HttpClient) { }
 
   getEmployeeJobsList(): Observable<EmployeeJobs[]> {
-    return of(employees);
+    return this.http.get<EmployeeJobs[]>(this.employeesUrl)
+    .pipe(
+      tap(_ => console.log('fetch employees')),
+      catchError(this.handleError('get employees', []))
+    );
   }
 
-  addEmployee(employee: EmployeeJobs) {
+  addEmployee (employee: EmployeeJobs): Observable<EmployeeJobs> {
+    return this.http.post<EmployeeJobs>(this.employeesUrl, employee, httpOptions).pipe(
+      catchError(this.handleError<EmployeeJobs>('addEmployeeJobs'))
+    );
+  }
 
+  getEmployee(id: number): Observable<EmployeeJobs> {
+    const url = `${this.employeesUrl}/${id}`;
+    return this.http.get<EmployeeJobs>(url).pipe(
+      catchError(this.handleError<EmployeeJobs>(`getemployee id=${id}`))
+    );
+  }
+
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      console.log(`${operation} failed: ${error.message}`);
+      return of(result as T);
+    };
   }
 }

@@ -3,12 +3,12 @@
   <div class="col">
     <ul class="list-group shadow-sm">
       <li *ngFor="let employee of employees" class="list-group-item d-flex justify-content-between list-group-item-action align-items-center">
-        {{employee.fullname}}
+        <a routerLink="/employees/{{employee.id}}">{{employee.fullname}}</a>
         <span>
           <span class="badge badge-primary badge-pill">To do <span>{{employee.todo}}</span></span>
           <span class="badge badge-warning badge-pill">In process <span>{{employee.inprocess}}</span></span>
           <span class="badge badge-success badge-pill">Done <span>{{employee.done}}</span></span>
-        </span>
+        </span>     
       </li>
     </ul>
   </div>

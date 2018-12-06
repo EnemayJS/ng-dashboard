@@ -16,6 +16,10 @@ const routes: Routes = [
       {
         path: 'new',
         component: EmployeeFormComponent
+      },
+      {
+        path: ':id',
+        component: EmployeeFormComponent
       }
     ]
   }

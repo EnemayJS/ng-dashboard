@@ -14,11 +14,11 @@ import { InMemoryDataService } from './in-memory-data.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
-    )
+    ),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

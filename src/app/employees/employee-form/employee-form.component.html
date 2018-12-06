@@ -1,7 +1,7 @@
-<h4>New Employee</h4>
+<h4>{{title}}</h4>
 <div class="row">
   <div class="col">
-    <form [formGroup]="employee" (ngSubmit)="onSubmit()">
+    <form [formGroup]="formEmployee" (ngSubmit)="onSubmit()">
       <div class="form-group row">
         <label class="col-2 col-form-label">Full Name:</label>
         <div class="col-10">
@@ -25,8 +25,11 @@
         <div class="col-10">
             <input type="number" formControlName="done" class="form-control shadow-sm">
         </div>
+      </div> 
+      <div class="btn-block">
+            <button class="btn btn-primary shadow mr-2" type="submit">Submit</button>
+            <button class="btn btn-warning shadow" type="button">Cancel</button>
       </div>
-      <button class="btn shadow" type="submit">Submit</button>
     </form>
   </div>
 </div>

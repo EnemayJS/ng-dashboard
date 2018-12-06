@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { EmployeeWithAddComponent } from './employee-with-add/employee-with-add.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 
+
 @NgModule({
   declarations: [
     EmployeesComponent,
@@ -17,9 +18,9 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
   ],
   imports: [
     CommonModule,
-    EmployeeRoutingModule,
+    ReactiveFormsModule,
     SharedModule,
-    ReactiveFormsModule
+    EmployeeRoutingModule,
   ]
 })
 export class EmployeeModule { }

@@ -1,5 +1,5 @@
 export interface EmployeeJobs {
-    id: number;
+    id?: number;
     fullname: string;
     todo: number;
     inprocess: number;
