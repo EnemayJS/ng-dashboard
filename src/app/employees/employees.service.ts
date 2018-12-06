@@ -36,6 +36,12 @@ export class EmployeesService {
     );
   }
 
+  updateEmployee(employee: EmployeeJobs): Observable<any> {
+    return this.http.put(this.employeesUrl, employee, httpOptions).pipe(
+      catchError(this.handleError<any>('update Employee'))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

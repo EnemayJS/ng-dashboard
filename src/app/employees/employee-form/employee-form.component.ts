@@ -34,7 +34,12 @@ export class EmployeeFormComponent implements OnInit {
 
   onSubmit() {
     console.warn(this.formEmployee.value);
-    this.service.addEmployee(this.formEmployee.value);
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.service.updateEmployee(this.formEmployee.value);
+    } else {
+      this.service.addEmployee(this.formEmployee.value);
+    }
   }
 
   getEmployee(): void {
