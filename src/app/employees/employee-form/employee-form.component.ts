@@ -55,12 +55,12 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   setForm(employee: EmployeeJobs) {
-    this.formEmployee = new FormGroup({
-      fullName: new FormControl(employee ? employee.fullname : ''),
-      todo: new FormControl(employee ? employee.todo : ''),
-      inProcess: new FormControl(employee ? employee.inprocess : ''),
-      done: new FormControl(employee ? employee.done : ''),
-      id: new FormControl(employee ? employee.id : '')
+    this.formEmployee.patchValue({
+      fullName: employee ? employee.fullname : '',
+      todo: employee ? employee.todo : '',
+      inProcess: employee ? employee.inprocess : '',
+      done: employee ? employee.done : '',
+      id: employee ? employee.id : ''
     });
   }
 

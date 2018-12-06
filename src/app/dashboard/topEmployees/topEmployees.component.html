@@ -3,7 +3,7 @@
   <div class="col">
     <ul class="list-group shadow-sm">
       <li *ngFor="let employee of employees; let i = index" class="list-group-item d-flex justify-content-between list-group-item-action align-items-center">
-        <h6>#{{i+1}} {{employee.fullname}}</h6>
+        <a routerLink="/employees/{{employee.id}}"><h6>#{{i+1}} {{employee.fullname}}</h6></a>
         <span>
             <h6><span class="badge badge-success badge-pill">Done <span>{{employee.done}}</span></span></h6>
         </span>
