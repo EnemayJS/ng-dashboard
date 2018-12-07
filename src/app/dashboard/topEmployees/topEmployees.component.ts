@@ -9,6 +9,7 @@ import { TopEmployee } from '../interfaces/topEmployee';
 })
 export class TopEmployeesComponent implements OnInit {
   employees: TopEmployee[];
+  imagePath = '/assets/img_avatar.png';
   constructor(private sevice: DashboardService) { }
 
   ngOnInit() {
